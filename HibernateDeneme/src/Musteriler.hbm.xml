@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 19.A?u.2013 17:08:30 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="Musteriler" table="musteriler" catalog="ornek">
+        <id name="musteriId" type="java.lang.Integer">
+            <column name="MusteriID" />
+            <generator class="identity" />
+        </id>
+        <property name="ad" type="string">
+            <column name="Ad" length="45" />
+        </property>
+        <property name="soyad" type="string">
+            <column name="Soyad" length="45" />
+        </property>
+        <property name="yas" type="java.lang.Integer">
+            <column name="Yas" />
+        </property>
+        <property name="cinsiyetId" type="java.lang.Integer">
+            <column name="CinsiyetID" />
+        </property>
+        <set name="sonuclars" table="sonuclar" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="MusteriID" />
+            </key>
+            <one-to-many class="Sonuclar" />
+        </set>
+    </class>
+</hibernate-mapping>

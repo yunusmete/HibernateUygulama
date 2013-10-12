@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 19.A?u.2013 17:10:44 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.mete.yunus.Sonuclar" table="sonuclar" catalog="ornek">
+        <id name="sonucId" type="java.lang.Integer">
+            <column name="SonucID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="musteriler" class="com.mete.yunus.Musteriler" fetch="select">
+            <column name="MusteriID" />
+        </many-to-one>
+        <property name="oluDeri" type="java.lang.Integer">
+            <column name="OluDeri" />
+        </property>
+        <property name="ciltTipi" type="string">
+            <column name="CiltTipi" length="45" />
+        </property>
+        <property name="lekeAdet" type="java.lang.Integer">
+            <column name="LekeAdet" />
+        </property>
+        <property name="lekeOrani" type="java.lang.Integer">
+            <column name="LekeOrani" />
+        </property>
+        <property name="kirisiklik" type="java.lang.Integer">
+            <column name="Kirisiklik" />
+        </property>
+        <property name="ph" type="java.lang.Integer">
+            <column name="pH" />
+        </property>
+    </class>
+</hibernate-mapping>
